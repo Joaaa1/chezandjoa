@@ -1,0 +1,418 @@
+<html><head><base>
+    <meta charset="UTF-8">
+    <title>Concepto RP - Tu portal gaming</title>
+    <style>
+    :root {
+      --neon-purple: #9d00ff;
+      --neon-blue: #00f3ff;
+      --dark-bg: #0a0a0a;
+      --main-purple: #6200ea;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Play', sans-serif;
+    }
+    
+    body {
+      background-color: var(--dark-bg);
+      color: white;
+    }
+    
+    header {
+  background: linear-gradient(45deg, var(--main-purple), var(--neon-purple));
+  padding: 1.5rem;
+  text-align: center;
+  /*box-shadow: 0 0 20px rgba(157, 0, 255, 0.5);*/
+  position: relative; /* Added for floating effect */
+
+}
+
+@keyframes float { /* New floating animation */
+  0% {
+    transform: translateY(0px);
+    text-shadow: 0 0 10px var(--neon-purple);
+  }
+  50% {
+    transform: translateY(-15px);
+    text-shadow: 0 0 20px var(--neon-purple), 0 0 30px var(--neon-blue);
+  }
+  100% {
+    transform: translateY(0px);
+    text-shadow: 0 0 10px var(--neon-purple);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+    nav {
+      background: rgba(98, 0, 234, 0.2);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(5px);
+    }
+    
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 2rem;
+    }
+    
+    nav a {
+      color: var(--neon-purple);
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+    
+    nav a:hover {
+      color: white;
+      text-shadow: 0 0 10px var(--neon-purple);
+    }
+    
+    .hero {
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230a0a0a"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="%23441177" stroke-width="0.5"/></svg>');
+    }
+    
+    .hero-content {
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
+    
+    .features {
+      padding: 2rem;
+      background: rgba(98, 0, 234, 0.1);
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .feature-card {
+      background: rgba(157, 0, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border: 1px solid var(--neon-purple);
+      transition: all 0.3s;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px var(--neon-purple);
+    }
+    
+    .gallery {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .gallery-item {
+      position: relative;
+      height: 200px;
+      background: linear-gradient(45deg, var(--main-purple), var(--neon-purple));
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    
+    .staff {
+      padding: 2rem;
+      background: rgba(98, 0, 234, 0.1);
+    }
+    
+    .staff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .staff-member {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(157, 0, 255, 0.1);
+      border-radius: 10px;
+      border: 1px solid var(--neon-purple);
+    }
+    
+    .staff-avatar {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+      /*margin-top: -20px;*/
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--main-purple), var(--neon-purple));
+      padding: 0px;
+    }
+    
+    .rules {
+      padding: 2rem;
+    }
+    
+    .rules-list {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: rgba(157, 0, 255, 0.1);
+      padding: 2rem;
+      border-radius: 10px;
+      border: 1px solid var(--neon-purple);
+    }
+    
+    .rules-list li {
+      margin: 1rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid var(--neon-purple);
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .section-title {
+      text-align: center;
+      color: var(--neon-purple);
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 10px var(--neon-purple);
+    }
+
+
+
+.texto-flotantexd {
+    animation: float 2s ease-in-out infinite;
+    display: flex;
+    height: 1px;
+    flex-direction: row;
+}
+
+.colorprogramadores{
+
+  background: linear-gradient(45deg, #08ff18, #250021);
+  margin-left: 15px;
+  color: white;
+  padding: 5px;
+  border-radius: 50px;
+  font-weight: bold;
+  white-space: nowrap;
+  z-index: 2000;
+
+  box-shadow: 0 0 40px rgba(81, 255, 0, 0.588);
+}
+
+
+.colorfunda{
+
+background: linear-gradient(45deg, #ff00b3, hsl(297, 100%, 50%));
+margin-left: 15px;
+color: white;
+padding: 1px;
+border-radius: 50px;
+font-weight: bold;
+white-space: nowrap;
+z-index: 2000;
+
+box-shadow: 0 0 40px rgba(255, 0, 225, 0.588);
+}
+
+.colorfunda2{
+
+background: linear-gradient(45deg, #5a08ff, hsl(249, 100%, 50%));
+margin-left: 15px;
+color: white;
+padding: 1px;
+border-radius: 50px;
+font-weight: bold;
+white-space: nowrap;
+z-index: 2000;
+
+box-shadow: 0 0 40px rgba(8, 0, 255, 0.588);
+}
+
+
+
+.imgstaffs{
+
+    border-radius: 50px;
+
+}
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+
+  
+    
+  
+    
+    <nav>
+        <h2 class="texto-flotantexd">Concepto RP</h2>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#caracteristicas">Características</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#staff">Staff</a></li>
+        <li><a href="#reglas">Reglas</a></li>
+      </ul>
+    </nav>
+    
+    <section class="hero" id="inicio">
+      <img src="/IMG/gta3.png" width="650" height="650">
+      <div class="hero-content">
+        <h2>Bienvenido a Concepto RP</h2>
+        <p>El mejor servidor Roleplay de San Andreas Multiplayer</p>
+      </div>
+    </section>
+    
+    <section id="caracteristicas" class="features">
+      <h2 class="section-title">Características del Servidor</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Sistema de Trabajos</h3>
+          <p>Policía, Médico, Mecánico, Taxista y muchos más</p>
+        </div>
+        <div class="feature-card">
+          <h3>Economía Realista</h3>
+          <p>Sistema bancario, propiedades y negocios</p>
+        </div>
+        <div class="feature-card">
+          <h3>Facciones</h3>
+          <p>Únete a la policía, mafia, o crea tu propia banda</p>
+        </div>
+        <div class="feature-card">
+          <h3>Propiedades</h3>
+          <p>Compra casas, negocios y vehículos personalizados</p>
+        </div>
+      </div>
+    </section>
+    
+    <section id="galeria" class="gallery">
+      <h2 class="section-title">Galería</h2>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div> 
+      </div>
+      <div class="gallery-item">
+        <img src="/IMG/gale1.png" width="315" height="200">
+      </div>
+      <div class="gallery-item">
+        <img src="/IMG/gale2.png" width="315" height="200">
+      </div>
+      <div class="gallery-item">
+        <img src="/IMG/gale3.png" width="315" height="200">
+      </div>
+      <div class="gallery-item">
+        <img src="/IMG/gale4.png" width="315" height="200">
+      </div>
+    </section>
+    
+    <section id="staff" class="staff">
+      <h2 class="section-title">Nuestro Staff</h2>
+      <div class="staff-grid">
+        <div class="staff-member">
+          <div class="staff-avatar">
+            <img class="staff-avatar" src="/IMG/chiwi.png" width="100" height="100">
+          </div>
+          <h3>Chiwi</h3>
+          <p class="colorfunda2">Fundador</p>
+        </div>
+        <div class="staff-member">
+          <div class="staff-avatar">
+            <img class="staff-avatar" src="/IMG/sebas.png" width="100" height="100">
+          </div>
+          <h3>Sebastian</h3>
+          <p class="colorfunda">Fundador</p>
+        </div>
+        <div class="staff-member">
+          <div class="staff-avatar">
+            <img class="staff-avatar" src="/IMG/Is_Ma3.webp" width="100" height="100">
+          </div>
+          <h3>Is_Ma</h3>
+          <p class="colorprogramadores">Programador Web</p>
+        </div>
+
+        <div class="staff-member">
+            <div class="staff-avatar">
+                <img class="staff-avatar" src="/IMG/feo-de-lian.gif" width="100" height="100">
+            </div>
+            <h3>Lian</h3>
+            <p class="colorprogramadores">Desarrollador Web</p>
+          </div>
+
+      </div>
+    </section>
+    
+    <section id="reglas" class="rules">
+      <h2 class="section-title">Reglas del Servidor</h2>
+      <ul class="rules-list">
+        <li>Respetar el Roleplay en todo momento (No Deathmatch)</li>
+        <li>Prohibido el uso de cheats o mods no autorizados</li>
+        <li>Mantener el personaje IC (In Character) en todo momento</li>
+        <li>No realizar PowerGaming o MetaGaming</li>
+        <li>Respetar a los administradores y sus decisiones</li>
+        <li>No usar Bug Abuse o exploits del juego</li>
+      </ul>
+    </section>
+    
+    <script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const section = document.querySelector(this.getAttribute('href'));
+        section.scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('mouseover', function() {
+        this.style.boxShadow = `0 0 20px var(--neon-purple)`;
+      });
+      
+      item.addEventListener('mouseout', function() {
+        this.style.boxShadow = 'none';
+      });
+    });
+    
+    document.querySelectorAll('.feature-card').forEach(card => {
+      card.addEventListener('mouseover', function() {
+        this.style.backgroundColor = 'rgba(157, 0, 255, 0.2)';
+      });
+      
+      card.addEventListener('mouseout', function() {
+        this.style.backgroundColor = 'rgba(157, 0, 255, 0.1)';
+      });
+    });
+    </script>
+    
+    </body></html>
